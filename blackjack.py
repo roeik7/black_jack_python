@@ -4,6 +4,11 @@ from Deck import Deck
 from Hand import Hand
 from Chips import Chips
 
+#execute the program
+while(True):
+  run_game()
+  break
+
 
 def hit(deck,hand):
     hand.add_card(deck.deal())
@@ -13,8 +18,10 @@ def hit_or_stand(deck,hand):
     while(True):
       print('Overall: {}'.format(hand.value))
       adjust_aces = input("\nDo you want adjust aces? 'y' or 'n' ")
+        
       if(adjust_aces=='y'):
        hand.adjust_for_ace()
+      
       player_move = input("Would you like to Hit or Stand? Enter 'h' or 's' ")
       player_move.lower()
 
@@ -146,12 +153,3 @@ def run_game():
     else:
         print("Thanks for playing!")
         break
-
-
-
-while(True):
-  #keep_playing=True
-  run_game()
-  break
-
-
